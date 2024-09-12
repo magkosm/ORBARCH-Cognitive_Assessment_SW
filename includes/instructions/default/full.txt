@@ -1,3 +1,4 @@
-<h1>Présentation des tâches</h1>
-
-<p>Tout l'enjeu pour le participant consiste à parvenir à réaliser l'ensemble de ces tâches simultanément.</p>
+<h1>Presentation of tasks</h1>
+<center>
+<p>The challenge for the participant is to complete all these tasks simultaneously.</p>
+</center>

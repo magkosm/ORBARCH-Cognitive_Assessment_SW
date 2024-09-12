@@ -1,3 +1,14 @@
-<h1>Présentation des tâches</h1>
+<h1>Communications Task</h1>
+<center>
+<p>In the communication task, you will have to respond to sound instructions about changes to the frequencies of their radios. Some messages are addressed to you (your callsign), but you have to ignore the other messages (addressed to other callsigns).</p>
+<p>Your own callsign name is written on the top of the task. </p>
+<p></p>
+<p><img src=communications.png></p>
+<p></p>
 
-<p>Dans la tâche de communication, il s'agit pour le participant de répondre à des instructions sonores quant aux fréquences de ses radios. Certains messages s'adressent à lui (son indicatif), mais il doit ignorer les autres messages (autre indicatif).</p>
+</center>
+
+
+<p><b>Controls:</b></p>
+<p>1. To select the radio to be changed, use the [UP] and [DOWN] keyboard arrows.</p>
+<p>2. To change the frequency (number) of the selected radio, use the [RIGHT] and [LEFT] keyboard arrows.</p>

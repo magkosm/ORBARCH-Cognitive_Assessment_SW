@@ -1,4 +1,11 @@
-<h1>Présentation du OpenMATB
-<p>OpenMATB est un logiciel de simulation d'environnement multitâches, développé pour la première fois en 1992 par Comstock et Arnegard.</p>
-
-<p>Parce qu'il exige des participants de contrôler plusieurs tâches simultanément, ce logiciel permet une compréhension fine des processus mentaux impliqués dans la gestion des situations complexes et dynamiques.</p>
+<h1>Presentation of Multi-Attribute Task Battery</h1>
+<center>
+<p>Multi-Attribute Task Battery is a multitasking environment simulation software package, first developed in 1992 by Comstock and Arnegard.</p>
+<p></p>
+<p>Because it requires participants to control several tasks simultaneously, this software provides a detailed understanding of the mental processes involved in managing complex and dynamic situations.</p>
+</center>
+<p></p>
+<p></p>
+<p><b>NOTE:</b></p>
+<p></p>
+<p>Make sure the NumLock key is active (meaning you can use the NumPad on the keyboard)</p>

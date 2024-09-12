@@ -29,7 +29,6 @@ class AbstractPlugin:
         self.next_refresh_time = 0
         self.scenario_time = 0
 
-
                                             #  If True
         self.blocking = False               # :blocks all other plugins when alive
         self.alive = False                  # :is started and not yet stopped
@@ -330,6 +329,17 @@ class AbstractPlugin:
             print(self.alias, 'Creating widgets')
         pthp = PLUGIN_TITLE_HEIGHT_PROPORTION
 
+
+        print('Abstract update')
+
+        if not self.blocking:
+            print('not self')
+            Window.MainWindow.show_middle_band = True
+            Window.MainWindow.create_MATB_background()  # Redraw the background
+            Window.MainWindow.on_draw()  # Force window redraw to update the screen
+        # Redraw the background when moving to the next slide
+
+
         self.container = Window.MainWindow.get_container(self.parameters['taskplacement'])
         self.title_container = self.container.reduce_and_translate(height=pthp,   y=1)
         self.task_container  = self.container.reduce_and_translate(height=1-pthp, y=0)
@@ -371,6 +381,9 @@ class AbstractPlugin:
         # Record the area coordinates of the widget if it has a container
         if container is not None:
             self.logger.record_aoi(container, fullname)
+
+
+
 
         return self.widgets[fullname]
 
@@ -469,6 +482,7 @@ class BlockingPlugin(AbstractPlugin):
 
 
     def update(self, dt):
+
         super().update(dt)
         if self.go_to_next_slide == True:
             self.go_to_next_slide = False
@@ -523,7 +537,9 @@ class BlockingPlugin(AbstractPlugin):
 
         # Waiting for the key release to advance one slide at the time
         if keystr.lower() == 'space' and state == 'release':
+            print('Blocking update')
             self.go_to_next_slide = True
+
 
 
 

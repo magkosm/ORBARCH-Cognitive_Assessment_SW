@@ -1,3 +1,9 @@
-<h1>Présentation des tâches</h1>
+<h1>Presentation of tasks</h1>
+<center>
+<p>In the tracking task, the participant has to correct the drift of a cursor using the joystick. The aim is to keep the device within a tolerance zone, symbolised by a circle.</p>
+</center>
+<p></p>
+<p><b>Controls:</b></p>
+<p></p>
 
-<p>Dans la tâche de poursuite, le participant doit corriger la dérive d'un curseur à l'aide du joystick. Son objectif est de maintenir l'appareil dans une zone de tolérance, symbolisée par une cercle.</p>
+<p>To do so, you should utilise the available Joystick.</p>

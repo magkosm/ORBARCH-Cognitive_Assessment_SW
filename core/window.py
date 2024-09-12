@@ -48,10 +48,13 @@ class Window(Window):
         self.batch = Batch()
         self.keyboard = dict() # Reproduce a simple KeyStateHandler
 
+        self.show_middle_band = False  # By default, show the middle band
+
         self.create_MATB_background()
         self.alive = True
         self.modal_dialog = None
         self.slider_visible = False
+
 
         self.on_key_press_replay = None # used by the replay
 
@@ -105,12 +108,13 @@ class Window(Window):
                                   l+w, b+h*(1-container_title_h), l, b+h*(1-container_title_h))),
                   ('c4B/static', C['BLACK'] * 4))
 
-        # Middle band
-        self.batch.add(4, GL_POLYGON, G(0),
-                  ('v2f/static', (l,   b + h/2,   l+w, b + h/2,
-                                  l+w, b + h*(0.5-container_title_h),
-                                  0,   b + h*(0.5-container_title_h))),
-                  ('c4B/static', C['BLACK'] * 4))
+        # Only draw the middle band if the flag is set
+        if self.show_middle_band:
+            self.batch.add(4, GL_POLYGON, G(0),
+                           ('v2f/static', (l, b + h / 2, l + w, b + h / 2,
+                                           l + w, b + h * (0.5 - container_title_h),
+                                           0, b + h * (0.5 - container_title_h))),
+                           ('c4B/static', C['BLACK'] * 4))
 
 
     def on_draw(self):

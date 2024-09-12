@@ -1,7 +1,19 @@
-<h1>Présentation des tâches</h1>
+<h1>Resource Manager</h1>
+<center>
+<p>In the resource management task, you have to have to maintain the levels of the two main tanks (A and B) by using a set of back-up tanks and pumps, each of which has a specific flow rating.</p>
 
-<p>Dans la tâche de gestion des ressources, les participants doivent limiter la fuite des deux réservoirs principaux (A et B) en utilisant un jeu de réservoirs de secours et de pompes, dont chacune a une puissance particulière.</p>
+<p>Your task is to switch the numbered pumps on and off to bring tanks A and B as close as possible to their normal levels.</p>
 
-<p>La tâche du participant est d'allumer/éteindre les pompes numérotées pour faire se rapprocher, du mieux que possible, les réservoirs A et B de leurs niveaux normaux.</p>
+<p>Normal levels for the A and B tanks are indicated by the small black rectangle to the left of A tank and right of the B tank.</p>
 
-<p>Des pompes peuvent parfois tomber en panne.</p>
+<p>Pumps can sometimes break down, which is indicated when they turn red.</p>
+<p>The flow rates of different pumps is indicated on the right side of the task</p>
+<p></p>
+<p><img src=resman.png></p>
+<p></p>
+</center>
+
+
+<p><b>Controls:</b></p>
+
+<p>To turn on and off the pumps use the number keys of the NumPad corresponding to the pump (triangle) label.</p>
