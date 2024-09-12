@@ -15,18 +15,18 @@ class Labstreaminglayer(Instructions):
         super().__init__()
 
         self.validation_dict =  {
-            'marker': validation.is_string,
+            'marker': validation.is_positive_integer,
             'streamsession': validation.is_boolean,
             'pauseatstart': validation.is_boolean, 'state': validation.is_string}
 
-        self.parameters.update({'marker':'', 'streamsession':False,
+        self.parameters.update({'marker':0, 'streamsession':False,
                                 'pauseatstart':False})
 
         self.stream_info = None
         self.stream_outlet = None
         self.stop_on_end = False
 
-        self.lsl_wait_msg = _("Please enable the OpenMATB stream into your LabRecorder.")
+        self.lsl_wait_msg = _("Please enable the cortivision_markers stream into your LabRecorder.")
 
 
     def start(self):
@@ -34,9 +34,9 @@ class Labstreaminglayer(Instructions):
         # If pylsl is not available this part should fail.
         # Create a LSL marker outlet.
         super().start()
-        self.stream_info = pylsl.StreamInfo('OpenMATB', type='Markers', channel_count=1,
-                                             nominal_srate=0, channel_format='string',
-                                             source_id='myuidw435368')
+        self.stream_info = pylsl.StreamInfo('cortivision_markers', type='Markers', channel_count=1,
+                                             nominal_srate=0, channel_format='int32',
+                                             source_id='pvt-orbarch')
         self.stream_outlet = pylsl.StreamOutlet(self.stream_info)
 
         if self.parameters['pauseatstart'] is True:
@@ -51,19 +51,24 @@ class Labstreaminglayer(Instructions):
         elif self.parameters['streamsession'] is False and self.logger.lsl is not None:
             self.logger.lsl = None
 
-        if self.parameters['marker'] != '':
+        if self.parameters['marker'] != 0:
             # A marker has been set. Push it to the outlet.
             self.push(self.parameters['marker'])
 
             # and reset the marker to empty.
-            self.parameters['marker'] = ''
+            self.parameters['marker'] = 0
 
 
     def push(self, message):
         if self.stream_outlet is None:
             return
-        self.stream_outlet.push_sample([message])
-#        print(message)
+
+            # Ensure the marker is an integer
+        try:
+            message = int(message)
+            self.stream_outlet.push_sample([message])
+        except ValueError:
+            print(f"Error: Marker is not an integer. Got {message}")
 
 
 

@@ -287,7 +287,7 @@ msgid "Press SPACE to continue"
 msgstr ""
 
 #: plugins/labstreaminglayer.py:19
-msgid "Please enable the OpenMATB stream into your LabRecorder."
+msgid "Please enable the cortivision_markers stream into your LabRecorder."
 msgstr ""
 
 #: plugins/parallelport.py:14

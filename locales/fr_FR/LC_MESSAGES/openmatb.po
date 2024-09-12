@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenMATB\n"
+"Project-Id-Version: Orbital Architecture - Multi-Attribute Task Battery Software?\n"
 "POT-Creation-Date: 2023-03-21 11:37+0100\n"
 "PO-Revision-Date: 2023-03-21 11:37+0100\n"
 "Last-Translator: \n"
@@ -266,8 +266,8 @@ msgid "You hit the Escape key"
 msgstr "Vous avez pressé la touche Échap"
 
 #: core/window.py:166
-msgid "Exit OpenMATB?"
-msgstr "Quitter OpenMATB ?"
+msgid "Exit the Multi-Attribute Task Battery Software?"
+msgstr "Quitter Multi-Attribute Task Battery Software?"
 
 #: core/window.py:170
 msgid "Pause"
@@ -313,8 +313,8 @@ msgid "Press SPACE to continue"
 msgstr "Appuyez sur ESPACE pour continuer"
 
 #: plugins/labstreaminglayer.py:23
-msgid "Please enable the OpenMATB stream into your LabRecorder."
-msgstr "Merci d’activer le flux OpenMATB dans le LabRecorder."
+msgid "Please enable the cortivision_markers stream into your LabRecorder."
+msgstr "Merci d’activer le flux cortivision_markers dans le LabRecorder."
 
 #: plugins/parallelport.py:17
 msgid "Python Parallel module is missing. Skipping parallel plugin"

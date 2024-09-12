@@ -12,7 +12,7 @@ from core.utils import get_conf_value
 
 
 class ModalDialog:
-    def __init__(self, win, msg, title='OpenMATB', continue_key='SPACE', exit_key=None):
+    def __init__(self, win, msg, title='Orbital Architecture /n Multi Attribute Task Battery', continue_key='SPACE', exit_key=None):
 
         # Allow for drawing of transparent vertices
         glEnable(GL_BLEND)

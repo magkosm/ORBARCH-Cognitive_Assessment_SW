@@ -65,7 +65,7 @@ class Window(Window):
         # Display the session ID if needed at window instanciation
         if not REPLAY_MODE and get_conf_value('Openmatb', 'display_session_number'):
             msg = _('Session ID: %s') % logger.session_id
-            title='OpenMATB'
+            title='Orbital Architecture /n Multi-Attribute Task Battery'
 
             self.modal_dialog = ModalDialog(self, msg, title)
 
@@ -167,7 +167,7 @@ class Window(Window):
 
     def exit_prompt(self):
         self.modal_dialog = ModalDialog(self, _('You hit the Escape key'), 
-                                        title=_('Exit OpenMATB?'), exit_key='q')
+                                        title=_('Exit the Multi-Attribute Task Battery Software?'), exit_key='q')
 
 
     def pause_prompt(self):
