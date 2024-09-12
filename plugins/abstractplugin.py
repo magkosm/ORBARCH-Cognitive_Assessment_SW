@@ -329,11 +329,7 @@ class AbstractPlugin:
             print(self.alias, 'Creating widgets')
         pthp = PLUGIN_TITLE_HEIGHT_PROPORTION
 
-
-        print('Abstract update')
-
         if not self.blocking:
-            print('not self')
             Window.MainWindow.show_middle_band = True
             Window.MainWindow.create_MATB_background()  # Redraw the background
             Window.MainWindow.on_draw()  # Force window redraw to update the screen
@@ -537,7 +533,6 @@ class BlockingPlugin(AbstractPlugin):
 
         # Waiting for the key release to advance one slide at the time
         if keystr.lower() == 'space' and state == 'release':
-            print('Blocking update')
             self.go_to_next_slide = True
 
 

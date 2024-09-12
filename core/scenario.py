@@ -10,6 +10,8 @@ from core.error import errors
 from core.utils import get_conf_value
 from core import validation
 from core.event import Event
+import random
+from pathlib import Path
 import plugins
 
 
@@ -24,12 +26,25 @@ class Scenario:
         self.plugins = dict()
 
         if contents is None:
-            scenario_path = P['SCENARIOS'].joinpath(get_conf_value('Openmatb', 'scenario_path'))
-            if scenario_path.exists():
-                contents = open(scenario_path, 'r').readlines()
-                logger.log_manual_entry(scenario_path, key='scenario_path')
-            else:
-                errors.add_error(_('%s was not found') % str(scenario_path), fatal = True)
+            # Define the directory where scenario files are located
+            scenarios_dir = Path('includes/scenarios')
+
+            # Get a list of all files in the directory
+            scenario_files = list(scenarios_dir.glob('*.txt'))  # Assuming scenario files are .txt
+
+            if not scenario_files:
+                errors.add_error(_('No scenario files found in includes/scenarios'), fatal=True)
+                return
+
+            # Select a random file from the list
+            scenario_file = random.choice(scenario_files)
+
+            # Read the contents of the randomly selected scenario file
+            with scenario_file.open('r') as file:
+                contents = file.readlines()
+
+            # Log the scenario path for manual entry
+            logger.log_manual_entry(str(scenario_file), key='scenario_path')
 
         # Convert the scenario content into a list of events #
         # (Squeeze empty and commented [#] lines)

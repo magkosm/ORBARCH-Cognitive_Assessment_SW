@@ -86,6 +86,7 @@ class Window(Window):
 
         return screen
 
+
     def set_size_and_location(self, screen):
         self.switch_to()        # The Window must be active before setting the location
         target_x = (screen.x + screen.width / 2) - screen.width / 2
@@ -137,10 +138,16 @@ class Window(Window):
             keystr = winkey.symbol_string(symbol)
             self.keyboard[keystr] = True  # KeyStateHandler
 
-            if keystr == 'ESCAPE':
+            # Check if CTRL is held down
+            is_ctrl_pressed = modifiers & winkey.MOD_CTRL
+
+            # Check for CTRL + Q to exit
+            if is_ctrl_pressed and keystr == 'Q':
                 self.exit_prompt()
-            elif keystr == 'P':
+            # Check for CTRL + P to pause
+            elif is_ctrl_pressed and keystr == 'P':
                 self.pause_prompt()
+
 
             logger.record_input('keyboard', keystr, 'press')
 
