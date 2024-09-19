@@ -1,0 +1,9 @@
+1. Make sure that you load the CVM file available in the folder Installation Files/Cog_SW_1.3.1/Configuration File for Cortiview
+2. During intial setup of the Cortiview SW, after pairing, you should go to settings, bottom right and do the following:
+	a. Set the Records Directory where you save the recordings to Desktop/FNIRS_Data
+	b. Next to the Lab Streaming Layer, make sure that the checkbox is toggled, and that the stream name is cortivision_markers
+3. Stop the fnirs, shut the device, and close the programm.
+4. Restart the programm according to the protocol, to make sure settings are as set before. 
+
+Note: 
+In this folder you can find images and screenshots for the confuiguration of the cap, both physically and in the software. 
