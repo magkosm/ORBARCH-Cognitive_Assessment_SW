@@ -487,7 +487,8 @@ class Communications(AbstractPlugin):
 
     def do_on_key(self, key, state, emulate):
         '''Check for radio change and frequency validation'''
-        key = super().do_on_key(key, state, emulate)
+        super().do_on_key(key, state, emulate)
+        # print(f"Key name: {key}")
         if key is None:
             return
 
