@@ -98,4 +98,5 @@ if not REPLAY_MODE:
         joystick = Joystick(joystick_device)
         joykey = joystick.keys
     else:
-        errors.add_error(_('No joystick found'))
+        # errors.add_error(_('No joystick found'))
+        print('No Joystick')
